@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #e6d0aa;
+  --foreground: #563f35;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-source-serif);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #563f35;
+    --foreground: #e6d0aa;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), sytem-ui, sans-serif;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.125rem;
 }
+
+/* film grain overlay (on whole site) */
+body::after {
+
+  content: "";
+
+  /* keep grain covering viewport as user scrolls */
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  /* make sure user can click elements THROUGH overlay */
+  pointer-events: none;
+
+  opacity: 0.9;
+  mix-blend-mode: overlay;
+  
+  /* data: isolate content to string; no fetch */
+  /* image/svg+xml: media/content type; tell browser data is svg */
+  /* urls cant contain special chars, so use percent encoding */
+  /* %3C = < */
+  /* %3E = > */
+  /* %25 = % */
+  /* %23 = # */
+  /* since svg inside data URI, need "url" so url after xmlns isn't real url; */
+  /* xmlns='http://www.w3.org/2000/svg' */
+  /* xmlns: xml namespace (type of xml) */
+  /* w3.org: w3c so that no risk of duplicate domain */
+  /* 2000: year-based folder; 2000 is when this namespace was established */
+  /* /svg: specify language; svg */
+  /* feTurbulence: generate fractal noise */
+  /* feColorMatrix w/ saturate 0: make monochrome */
+  /* stitchTiles: make seams invisible */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+
+  animation: grain-shift 0.6s steps(1) infinite;
+
+}
+
+/* animate grain :) */
+/* heehee hoohoo */
+@keyframes grain-shift {
+  0%, 100% { background-position: 0 0; }
+  20% { background-position: -40px 30px; }
+  40% { background-position: 60px -50px; }
+  60% { background-position: -70px -20px; }
+  80% { background-position: 30px 70px; }
+}
+

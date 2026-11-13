@@ -11,7 +11,7 @@ export default function Header() {
     <header className="border-b border-foreground/10">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <Link href="/" className="font-semibold">
-          Ruby Morris
+          Wooby
         </Link>
         <ul className="flex gap-6 text-sm">
           {links.map((link) => (
