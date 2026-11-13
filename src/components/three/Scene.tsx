@@ -38,8 +38,8 @@ function ScrollCube() {
   // THA CUBE
   return (
     <mesh ref={meshRef} rotation={[0, START_YAW, 0]}>
-      <boxGeometry args={[1.5, 1.5, 1.5]} />
-      <meshStandardMaterial color="#c11655" />
+      <boxGeometry args={[2, 2, 2]} />
+      <meshStandardMaterial color="#cfbea2" />
     </mesh>
   );
 }
@@ -47,7 +47,7 @@ function ScrollCube() {
 // canvas fills parent, so div controls size
 export default function Scene() {
   return (
-    <div className="h-[60vh] w-full">
+    <div className="h-[60vh] w-[25vw]">
       <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[3, 3, 3]} intensity={1.5} />
