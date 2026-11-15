@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import RadialMenu from "@/components/ui/RadialMenu";
+import { languages } from "@/data/languages";
 
 export const metadata: Metadata = {
   title: "About",
@@ -15,6 +17,9 @@ export default function AboutPage() {
       </p>
 
       <h2 className="mt-10 text-xl font-semibold">Skills</h2>
+      <div className="mt-10">
+        <RadialMenu items={languages} />
+      </div>
       <ul className="mt-3 list-disc pl-6 leading-7">
         <li>JavaScript / TypeScript, C#, Java, CSS, HTML, Python</li>
         <li>React, Next.js, Three.js, Express.js</li>
