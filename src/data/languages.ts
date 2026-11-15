@@ -17,7 +17,7 @@ export const languages: RadialMenuItem[] = [
   { id: "html", 
     label: "HTML", 
     detail: "HTML5",
-    imageURL: "https://sabarimarketing.com/wp-content/uploads/2021/03/HTML5-850x500.jpg",
+    imageURL: "/images/html5.png", 
   },
 
   { id: "css", 
