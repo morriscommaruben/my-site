@@ -175,7 +175,7 @@ export default function RadialMenu({
         const active = items.find((item => item.id === activeId));
 
         return (
-            <div className="flex flex-col min-w-dvh items-center">
+            <div className="flex flex-col min-w-md items-center">
                 {/* viewBox for svg coord system */}
                 <svg
                     viewBox={`0 0 ${size} ${size}`} 

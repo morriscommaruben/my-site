@@ -17,7 +17,7 @@ export default function AboutPage() {
       </p>
 
       <h2 className="mt-10 text-xl font-semibold">Skills</h2>
-      <div className="mt-10 mx-10 w-full flex flex-col items-start">
+      <div className="mt-10 mx-5 w-full flex flex-col items-start">
         <RadialMenu items={languages}/>
       </div>
       <ul className="mt-3 list-disc pl-6 leading-7">
