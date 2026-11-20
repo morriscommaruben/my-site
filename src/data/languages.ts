@@ -11,6 +11,7 @@ export const languages: RadialMenuItem[] = [
 
   { id: "java", 
     label: "Java", 
+    detail: "Java",
     imageURL: "/images/java.png", 
   },
 
@@ -39,11 +40,13 @@ export const languages: RadialMenuItem[] = [
 
   { id: "c",
     label: "C",
+    detail: "C",
     imageURL: "/images/c.png", 
   },
 
   { id: "typescript",
     label: "Typescript",
+    detail: "TypeScript",
     imageURL: "/images/ts.png", 
   },
 

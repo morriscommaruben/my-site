@@ -175,7 +175,7 @@ export default function RadialMenu({
         const active = items.find((item => item.id === activeId));
 
         return (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col min-w-dvh items-center">
                 {/* viewBox for svg coord system */}
                 <svg
                     viewBox={`0 0 ${size} ${size}`} 
@@ -283,7 +283,7 @@ export default function RadialMenu({
                                 )}
 
                                 {/* label at segment centre */}
-                                <text
+                                {/* <text
                                     x={labelPos.x}
                                     y={labelPos.y}
                                     textAnchor="middle"
@@ -297,12 +297,12 @@ export default function RadialMenu({
                                     }}
                                 >
                                     {item.label}
-                                </text>
+                                </text> */}
                             </g>
                         );
                     })};
                 </svg>
-                <p className="mt-4 min-h-6 text-center text-sm opacity-80" aria-live="polite">
+                <p className="mt-4 min-h-6 text-center text-lg" aria-live="polite">
                     {active?.detail}
                 </p>
             </div>
